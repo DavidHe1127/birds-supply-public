@@ -5,5 +5,4 @@ This app connects birds supplier, customers and bird shop together. It is focuse
 Please note, this app is developing continously.
 
 ### TODOs
-* Remove unused dependencies
 * Config it to work with `graphql-playpen`

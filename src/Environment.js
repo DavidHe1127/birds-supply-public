@@ -8,7 +8,7 @@ import {
 const store = new Store(new RecordSource());
 
 const network = Network.create((operation, variables) => {
-  return fetch('https://api.graph.cool/relay/v1/cj857z0r40moo0150xszdlk7z', {
+  return fetch('http://127.0.0.1:4000/graphql', {
     method: 'POST',
     headers: {
       Accept: 'application/json',

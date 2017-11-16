@@ -6,3 +6,5 @@ Please note, this app is developing continously.
 
 ### TODOs
 * Config it to work with `graphql-playpen`
+* Design the wireframe
+* Use semantic UI to implement wireframe

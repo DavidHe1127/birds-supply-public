@@ -6,8 +6,8 @@ import environment from './Environment';
 
 const AppAllPostQuery = graphql`
   query AppAllPostQuery {
-    viewer {
-      ...ListPage_viewer
+    companies {
+      name
     }
   }
 `;
@@ -22,8 +22,11 @@ class App extends Component {
           if (error) {
             return <div>{error.message}</div>;
           } else if (props) {
-            return null;
-            // return <ListPage viewer={props.viewer} />;
+            return (
+              <ul>
+                {props.companies.map((x, i) => <li key={i}>{x.name}</li>)}
+              </ul>
+            );
           }
           return <div>Loading</div>;
         }}

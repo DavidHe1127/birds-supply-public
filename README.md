@@ -5,6 +5,6 @@ This app connects birds supplier, customers and bird shop together. It is focuse
 Please note, this app is developing continously.
 
 ### TODOs
-* Config it to work with `graphql-playpen`
 * Design the wireframe
 * Use semantic UI to implement wireframe
+* Follow node/edge hierachy recommended by relay

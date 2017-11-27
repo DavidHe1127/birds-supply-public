@@ -4093,6 +4093,10 @@ jest@20.0.4:
   dependencies:
     jest-cli "^20.0.4"
 
+jquery@x.*:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+
 js-base64@^2.1.9:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"
@@ -6116,12 +6120,19 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.6.33"
 
-semantic-ui-react@^0.76.0:
-  version "0.76.0"
-  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.76.0.tgz#39d8135416d787d904e0361399006fb8e0b24c8a"
+semantic-ui-css@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/semantic-ui-css/-/semantic-ui-css-2.2.12.tgz#afc462e5bb4f8a0dcfe3dca11274499a997490dd"
+  dependencies:
+    jquery x.*
+
+semantic-ui-react@^0.77.0:
+  version "0.77.0"
+  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.77.0.tgz#2119bc79f53f9764440b1e16ce13b2967557578d"
   dependencies:
     babel-runtime "^6.25.0"
     classnames "^2.2.5"
+    fbjs "^0.8.16"
     lodash "^4.17.4"
     prop-types "^15.5.10"
 

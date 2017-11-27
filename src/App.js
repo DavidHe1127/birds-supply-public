@@ -16,7 +16,7 @@ const AppAllPostQuery = graphql`
 
 class App extends Component {
   render() {
-    return <Button content="what the fuck" />;
+    return <Button content="bird supply" />;
   }
 }
 

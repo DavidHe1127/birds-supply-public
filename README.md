@@ -4,7 +4,9 @@ This app connects birds supplier, customers and bird shop together. It is focuse
 
 Please note, this app is developing continously.
 
+### WIP
+* Use semantic UI to implement wireframe (home page design in progress)
+
 ### TODOs
-* Design the wireframe
-* Use semantic UI to implement wireframe
-* Follow node/edge hierachy recommended by relay
+* Design the wireframe (home page design done)
+* Find theme from adobe theme finder

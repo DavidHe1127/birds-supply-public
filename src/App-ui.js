@@ -18,9 +18,9 @@ const FixedMenu = () => (
   <Menu fixed='top' size='large'>
     <Container>
       <Menu.Item as='a' active>Home</Menu.Item>
-      <Menu.Item as='a'>Work</Menu.Item>
-      <Menu.Item as='a'>Company</Menu.Item>
-      <Menu.Item as='a'>Careers</Menu.Item>
+      <Menu.Item as='a'>Our Birds</Menu.Item>
+      <Menu.Item as='a'>Events</Menu.Item>
+      <Menu.Item as='a'>Contact us</Menu.Item>
       <Menu.Menu position='right'>
         <Menu.Item className='item'>
           <Button as='a'>Log in</Button>

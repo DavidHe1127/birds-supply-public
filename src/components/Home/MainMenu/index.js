@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Menu, Container } from 'semantic-ui-react';
 
-import items from 'components/MainMenu/items';
+import items from './items';
 
 const MenuItems = () =>
   Object.keys(items).map((k, i) => <Menu.Item {...items[k]} key={i}>{k}</Menu.Item>);

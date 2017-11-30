@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { MainMenu } from 'components/MainMenu';
+
+import { MainMenu } from 'components/Home/MainMenu';
+import { Carousel } from 'components/Home/Carousel';
 
 import {
   Button,
@@ -26,7 +28,7 @@ export default class App extends Component {
 
     return (
       <div>
-        { visible ? <MainMenu.Floating /> : null }
+        { visible ? <MainMenu.Fixed /> : null }
 
         <Visibility
           onBottomPassed={this.showFixedMenu}
@@ -39,25 +41,10 @@ export default class App extends Component {
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
-           <MainMenu.Fixed />
-
-            <Container text>
-              <Header
-                as='h1'
-                content='Imagine-a-Company'
-                inverted
-                style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
-              />
-              <Header
-                as='h2'
-                content='Do whatever you want when you want to.'
-                inverted
-                style={{ fontSize: '1.7em', fontWeight: 'normal' }}
-              />
-              <Button primary size='huge'>
-                Get Started
-                <Icon name='right arrow' />
-              </Button>
+           <MainMenu.Floating />
+         {/* carousel */}
+            <Container>
+              <Carousel />
             </Container>
           </Segment>
         </Visibility>

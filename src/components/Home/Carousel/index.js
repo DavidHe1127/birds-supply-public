@@ -1,25 +1,30 @@
 import React from 'react';
 import Slick from 'react-slick';
+import { Image } from 'semantic-ui-react';
+
+import gold_blue_macaw from 'images/gold_blue_macaw.jpg';
+import hyacinth_macaw from 'images/hyacinth_macaw.jpg';
+import military_macaw from 'images/military_macaw.jpg';
+import scarlet_macaw from 'images/scarlet_macaw.jpg';
+import sulphur_crested_cockatoo from 'images/sulphur_crested_cockatoo.jpg';
+
 
 const Carousel = () => (
   <Slick>
     <div>
-      <h3>1</h3>
+      <Image src={gold_blue_macaw} />
     </div>
     <div>
-      <h3>2</h3>
+      <Image src={hyacinth_macaw} />
     </div>
     <div>
-      <h3>3</h3>
+      <Image src={military_macaw} />
     </div>
     <div>
-      <h3>4</h3>
+      <Image src={scarlet_macaw} />
     </div>
     <div>
-      <h3>5</h3>
-    </div>
-    <div>
-      <h3>6</h3>
+      <Image src={sulphur_crested_cockatoo} />
     </div>
   </Slick>
 );

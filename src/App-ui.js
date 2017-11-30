@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 import { MainMenu } from 'components/Home/MainMenu';
 import { Carousel } from 'components/Home/Carousel';

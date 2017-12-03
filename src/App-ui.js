@@ -39,13 +39,11 @@ export default class App extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ height: 300, padding: '1em 0em' }}
+            style={{ height: 800, padding: '1em 0em' }}
             vertical
           >
             <MainMenu.Floating />
-            <Container>
-              <Carousel />
-            </Container>
+            <Carousel />
           </Segment>
         </Visibility>
       </div>

@@ -8,26 +8,27 @@ import military_macaw from 'images/military_macaw.jpg';
 import scarlet_macaw from 'images/scarlet_macaw.jpg';
 import galah from 'images/galah.jpg';
 
-const Carousel = () => (
-  <div className="wrapper">
+const Carousel = () => {
+  const slides = [
+    gold_blue_macaw,
+    sulphur_crested_cockatoo,
+    military_macaw,
+    scarlet_macaw,
+    galah
+  ].map((s, i) => {
+    const style = {
+      height: '720px',
+      background: `url(${s})`,
+      'background-size': 'cover'
+    };
+    return <div style={style} key={i} />;
+  });
+
+  return (
     <Slick arrows={false} dots>
-      <div>
-        <Image src={gold_blue_macaw} />
-      </div>
-      <div>
-        <Image src={hyacinth_macaw} />
-      </div>
-      <div>
-        <Image src={military_macaw} />
-      </div>
-      <div>
-        <Image src={scarlet_macaw} />
-      </div>
-      <div>
-        <Image src={galah} />
-      </div>
+      {slides}
     </Slick>
-  </div>
-);
+  );
+};
 
 export { Carousel };

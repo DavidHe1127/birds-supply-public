@@ -4,28 +4,50 @@ import React, { Component } from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import environment from './Environment';
 
-import {
-  Segment,
-  Visibility
-} from 'semantic-ui-react';
+import { Segment, Visibility } from 'semantic-ui-react';
 
 import { MainMenu } from 'components/Home/MainMenu';
 import { Carousel } from 'components/Home/Carousel';
 import { BestSellers } from 'components/Home/BestSellers';
 
-export default class App extends Component {
-  state = {
-
+const bestSellers = graphql`
+  query bestSellers {
+    bestSellers
   }
+`;
 
-  hideFixedMenu = () => this.setState({ visible: false })
-  showFixedMenu = () => this.setState({ visible: true })
+export default class App extends Component {
+  state = {};
+
+  hideFixedMenu = () => this.setState({ visible: false });
+  showFixedMenu = () => this.setState({ visible: true });
 
   render() {
     const { visible } = this.state;
 
     return (
-      <div>
+      <QueryRenderer
+        environment={environment}
+        query={bestSellers}
+        render={({ error, props }) => {
+          if (error) {
+            return <div>{error.message}</div>;
+          } else if (props) {
+            return (
+              <ul>
+                {props.companies.map((x, i) => <li key={i}>{x.name}</li>)}
+              </ul>
+            );
+          }
+          return <div>Loading</div>;
+        }}
+      />
+    );
+  }
+}
+
+/*
+<div>
         {visible ? <MainMenu.Fixed /> : null}
 
         <Visibility
@@ -47,6 +69,5 @@ export default class App extends Component {
           <BestSellers />
         </Segment>
       </div>
-    );
-  }
-}
+
+      */

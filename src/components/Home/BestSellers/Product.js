@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Image, Grid, Card, Icon } from 'semantic-ui-react';
 
-const Card = ({name, price, descr, image}) => (
+const Product = ({name, price, descr, image}) => (
   <Card>
     <Image src={image} />
     <Card.Content>
@@ -17,7 +17,7 @@ const Card = ({name, price, descr, image}) => (
   </Card>
 );
 
-export { Card };
+export { Product };
 
     // <Card.Content extra>
     //   <a>

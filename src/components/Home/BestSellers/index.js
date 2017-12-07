@@ -1,8 +1,8 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { Image, Grid, Card, Icon } from 'semantic-ui-react';
+import { Image, Grid, Icon } from 'semantic-ui-react';
 
-import { Card } from './Card';
+import { Product } from './Product';
 import elliot from 'images/elliot.jpg';
 
 const data = [
@@ -26,10 +26,11 @@ const data = [
   }
 ];
 
-const BestSellers = () => {
+const BestSellers = (props) => {
+  console.log('bestSellers', props.bestSellers)
   const cols = data.map(x => (
     <Grid.Column>
-      <Card {...x} />
+      <Product {...x} />
     </Grid.Column>
   ));
 
@@ -42,10 +43,10 @@ const BestSellers = () => {
   );
 };
 
-const FragmentContainer = createFragmentContainer(
+export default createFragmentContainer(
   BestSellers,
   graphql`
-    fragment BestSellers_products on ProductConnection {
+    fragment BestSellers_bestSellers on ProductConnection {
       edges {
         node {
           id
@@ -59,11 +60,3 @@ const FragmentContainer = createFragmentContainer(
     }
   `
 );
-
-// query bestSellers {
-//   bestSellers {
-//     ...b1
-//   }
-// }
-
-export { FragmentContainer };

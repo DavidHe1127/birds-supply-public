@@ -54,7 +54,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "build:gql": "relay-compiler --src ./src --schema ./schema.graphql",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql",
+    "relay:watch": "npm run relay -- --watch",
     "get:schema": "get-graphql-schema http://127.0.0.1:4000/graphql > schema.graphql",
     "test": "node scripts/test.js --env=jsdom"
   },

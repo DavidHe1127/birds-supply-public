@@ -54,6 +54,7 @@ export default createFragmentContainer(
           parrot {
             id
             name
+            distribution
           }
         }
       }

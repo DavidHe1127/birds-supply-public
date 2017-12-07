@@ -5,39 +5,26 @@ import { Image, Grid, Icon } from 'semantic-ui-react';
 import { Product } from './Product';
 import elliot from 'images/elliot.jpg';
 
-const data = [
-  {
-    image: elliot,
-    name: 'A',
-    price: '14.00',
-    descr: 'This bird is awesome'
-  },
-  {
-    image: elliot,
-    name: 'B',
-    price: '25.00',
-    descr: 'This bird is great'
-  },
-  {
-    image: elliot,
-    name: 'C',
-    price: '41.00',
-    descr: 'This bird is nice'
-  }
-];
+const BestSellers = ({ bestSellers }) => {
+  const { edges } = bestSellers;
 
-const BestSellers = (props) => {
-  console.log('bestSellers', props.bestSellers)
-  const cols = data.map(x => (
-    <Grid.Column>
-      <Product {...x} />
+  const cols = edges.map(x => (
+    <Grid.Column key={x.node.id}>
+      <Product
+        {...{
+          image: elliot,
+          name: x.node.parrot.name,
+          price: x.node.price,
+          descr: 'This bird is awesome'
+        }}
+      />
     </Grid.Column>
   ));
 
   return (
     <Grid centered>
       <Grid.Row centered columns={4}>
-        cols
+        {cols}
       </Grid.Row>
     </Grid>
   );
@@ -54,7 +41,6 @@ export default createFragmentContainer(
           parrot {
             id
             name
-            distribution
           }
         }
       }

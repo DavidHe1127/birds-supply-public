@@ -35,7 +35,6 @@ export default class App extends Component {
           if (error) {
             return <div>{error.message}</div>;
           } else if (props) {
-            console.log('bbbb', props);
             return (
               <div>
                 {visible ? <MainMenu.Fixed /> : null}

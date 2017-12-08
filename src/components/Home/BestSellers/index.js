@@ -14,16 +14,20 @@ const BestSellers = ({ bestSellers }) => {
         {...{
           image: elliot,
           name: x.node.parrot.name,
-          price: x.node.price,
-          descr: 'This bird is awesome'
+          price: x.node.price.toLocaleString('en-au', {
+            style: 'currency',
+            currency: 'AUD'
+          }),
+          description: x.node.parrot.description,
+          supplier: 'av @' + x.node.supplier.name
         }}
       />
     </Grid.Column>
   ));
 
   return (
-    <Grid centered>
-      <Grid.Row centered columns={4}>
+    <Grid>
+      <Grid.Row columns={3}>
         {cols}
       </Grid.Row>
     </Grid>
@@ -40,6 +44,10 @@ export default createFragmentContainer(
           price
           parrot {
             id
+            name
+            description
+          }
+          supplier {
             name
           }
         }

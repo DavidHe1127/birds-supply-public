@@ -1,17 +1,33 @@
 import React from 'react';
 
-import { Image, Grid, Card, Icon } from 'semantic-ui-react';
+import { Image, Card } from 'semantic-ui-react';
 
-const Product = ({name, price, descr, image}) => (
+import styled from 'styled-components';
+
+const Price = styled.span`
+  font-weight: bold;
+  font-style: oblique;
+  color: brown;
+`;
+
+const Supplier = styled.span`
+  font-weight: bold;
+  font-style: oblique;
+  color: #2e86c1;
+  float: right;
+`;
+
+const Product = ({name, price, description, supplier, image}) => (
   <Card>
     <Image src={image} />
     <Card.Content>
-      <Card.Header>{name}</Card.Header>
+      <Card.Header textAlign="center">{name}</Card.Header>
       <Card.Meta>
-        <span className="date">{price}</span>
+        <Price>{price}</Price>
+        <Supplier>{supplier}</Supplier>
       </Card.Meta>
       <Card.Description>
-        {descr}
+        {description}
       </Card.Description>
     </Card.Content>
   </Card>

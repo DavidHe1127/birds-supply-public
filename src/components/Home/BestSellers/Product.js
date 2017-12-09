@@ -18,7 +18,7 @@ const Supplier = styled.span`
 `;
 
 const Product = ({name, price, description, supplier, image}) => (
-  <Card>
+  <Card centered>
     <Image src={image} />
     <Card.Content>
       <Card.Header textAlign="center">{name}</Card.Header>

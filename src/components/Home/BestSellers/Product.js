@@ -34,10 +34,3 @@ const Product = ({name, price, description, supplier, image}) => (
 );
 
 export { Product };
-
-    // <Card.Content extra>
-    //   <a>
-    //     <Icon name="user" />
-    //     22 Friends
-    //   </a>
-    // </Card.Content>

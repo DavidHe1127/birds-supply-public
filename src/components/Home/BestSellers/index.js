@@ -1,6 +1,6 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { Image, Grid, Icon } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
 import { Product } from './Product';
 import elliot from 'images/elliot.jpg';

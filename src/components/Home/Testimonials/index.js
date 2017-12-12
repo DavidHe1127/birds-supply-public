@@ -1,29 +1,31 @@
-import React from 'react'
-import { Grid, Image, Container } from 'semantic-ui-react';
+import React from 'react';
+import { Grid, Item } from 'semantic-ui-react';
 
-// import buyer from './buyer.svg'
-// <Image src={buyer} size="small" />
+import seeds from 'seeds/testimonials.json';
 
-const Testimonial = () => (
-  <Grid>
-    <Grid.Row columns={3}>
-      <Grid.Column>
-        <Container>
-          <span>this is a test </span>
-        </Container>
-      </Grid.Column>
-      <Grid.Column>
-        <Container>
-          <span>this is a test </span>
-        </Container>
-      </Grid.Column>
-      <Grid.Column>
-        <Container>
-          <span>this is a test </span>
-        </Container>
-      </Grid.Column>
-    </Grid.Row>
-  </Grid>
-)
+const images = window.importAll(require.context('images', false, /\.svg$/));
+
+const Testimonial = () => {
+  const testimonials = seeds.map((x, i) => (
+    <Grid.Column>
+      <Item.Group>
+        <Item>
+          <Item.Image size="tiny" src={images[i]} />
+          <Item.Content>
+            <Item.Meta>{`"${x.testimonial}"`}</Item.Meta>
+            <Item.Description>{x.name}</Item.Description>
+            <Item.Extra>{x.area}</Item.Extra>
+          </Item.Content>
+        </Item>
+      </Item.Group>
+    </Grid.Column>
+  ));
+
+  return (
+    <Grid>
+      <Grid.Row columns={3}>{testimonials}</Grid.Row>
+    </Grid>
+  );
+};
 
 export default Testimonial;

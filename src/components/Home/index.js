@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Segment, Visibility, Container } from 'semantic-ui-react';
+import { Segment, Visibility, Header } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 import { MainMenu } from 'components/Home/MainMenu';
 import { Carousel } from 'components/Home/Carousel';
@@ -8,6 +9,10 @@ import BestSellers from 'components/Home/BestSellers';
 import Testimonials from 'components/Home/Testimonials';
 
 import './index.css';
+
+const Wrapper = styled.div`
+  margin: 20px;
+`;
 
 export default class Home extends Component {
   state = {};
@@ -36,12 +41,15 @@ export default class Home extends Component {
             <Carousel />
           </Segment>
         </Visibility>
-        <Container className="testimonials">
+        <Wrapper>
           <BestSellers bestSellers={this.props.bestSellers} />
-        </Container>
-        <Segment>
+        </Wrapper>
+        <Wrapper>
+          <Header size="large" textAlign="center">What our customers say...</Header>
+        </Wrapper>
+        <Wrapper>
           <Testimonials />
-        </Segment>
+        </Wrapper>
       </div>
     );
   }

@@ -33,5 +33,3 @@ export default class App extends Component {
     );
   }
 }
-
-// {props.companies.map((x, i) => <li key={i}>{x.name}</li>)}

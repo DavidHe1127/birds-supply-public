@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
-import { Segment, Visibility, Header } from 'semantic-ui-react';
+import { Segment, Visibility, Header, Divider } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 import { MainMenu } from 'components/Home/MainMenu';
 import { Carousel } from 'components/Home/Carousel';
 import BestSellers from 'components/Home/BestSellers';
 import Testimonials from 'components/Home/Testimonials';
-
-import './index.css';
 
 const Wrapper = styled.div`
   margin: 20px;
@@ -41,12 +39,20 @@ export default class Home extends Component {
             <Carousel />
           </Segment>
         </Visibility>
+        <Divider hidden/>
+        <Divider horizontal>
+          <Header size="large" textAlign="center">
+            Our Best Sellers
+          </Header>
+        </Divider>
         <Wrapper>
           <BestSellers bestSellers={this.props.bestSellers} />
         </Wrapper>
-        <Wrapper>
-          <Header size="large" textAlign="center">What our customers say...</Header>
-        </Wrapper>
+        <Divider horizontal>
+          <Header size="large" textAlign="center">
+            What our customers say...
+          </Header>
+        </Divider>
         <Wrapper>
           <Testimonials />
         </Wrapper>

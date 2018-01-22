@@ -8,6 +8,6 @@ Please note, this app is developing continously.
 * Use semantic UI to implement wireframe (home page design in progress)
 
 ### TODOs
-* Add "Why buy from us" section
+* Add "Why buy from us" section (use icons Emmanuel has provided)
 * Design the wireframe (home page design done)
 * Find theme from adobe theme finder
